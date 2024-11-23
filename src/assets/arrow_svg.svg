@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 70" width="36" height="70">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #d4b254 } 
+	</style>
+	<g id="Homepage">
+		<g id="Testimonial Slider">
+			<path id="Combined Shape" class="shp0" d="M34.29 69.65L0.35 35.71C-0.04 35.32 -0.04 34.68 0.35 34.29L34.29 0.35C34.68 -0.04 35.32 -0.04 35.71 0.35C36.1 0.74 36.1 1.38 35.71 1.77L2.47 35L35.71 68.23C36.1 68.62 36.1 69.26 35.71 69.65C35.32 70.04 34.68 70.04 34.29 69.65Z" />
+		</g>
+	</g>
+</svg>

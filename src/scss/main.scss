@@ -1,0 +1,56 @@
+// --- SETUP
+@use 'sass:math';
+@import './vars.scss';
+@import './mixins.scss';
+
+// --- UTILS
+@import './grid/index.scss';
+@import './utils/fonts.scss';
+@import './utils/text.scss';
+
+// --- TEXT
+@import './utils/text.scss';
+@import './utils/fonts.scss';
+
+// --- CORE
+@import './core/body.scss';
+@import './core/header.scss';
+@import './core/footer.scss';
+
+
+// --- COMPONENTS
+@import './components/btn.scss';
+@import './components/pane.scss';
+@import './components/split-block.scss';
+@import './components/testimonial.scss';
+@import './components/gallery.scss';
+@import './components/intro.scss';
+// Navigation
+@import './components/nav-primary.scss';
+@import './components/nav-secondary.scss';
+
+//--- ELEMENTS
+@import './elements/para.scss'; 
+
+// --- HELPERS
+@import './helpers/margin.scss';
+@import './helpers/height.scss';
+@import './helpers/flex.scss';
+
+
+$primary-color: #000000;
+$text-color: #3af80a;
+$secondary-color: #432396;
+
+body{
+	@import './themes/themes.scss';
+	.lhs_icons{
+		width: 100px;
+		float: left;
+		border-right: 1px solid #000;
+		height: 100%;
+	}
+	.rhs_content{
+		overflow: hidden;background: #ccc;	
+	}
+}

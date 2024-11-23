@@ -1,0 +1,50 @@
+.gallery {
+  padding: 100px 0 100px 0;
+  .row {
+    @include prefix('display', 'flex');
+    flex-wrap: wrap;
+
+  }
+  &__img{
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: nowrap;
+      img{
+        display: block;
+        width: 100%;
+    }
+
+  }
+  // 1024
+  @media (max-width: $l) {
+    &__img{
+      box-sizing: border-box !important;
+      white-space: nowrap;
+      padding-bottom: 15px;
+    }
+    .row {
+      div.gallery__img:nth-child(odd) {
+        padding-right: 15px;
+      }
+      div.gallery__img:nth-child(even) {
+        padding-left: 15px;
+      }
+      div.gallery__img:nth-last-child(1) {
+        padding-bottom: 0;
+      }
+      div.gallery__img:nth-last-child(2) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  @media (min-width: $l){
+    &__img {
+      margin-right: 2%;
+      width: 23.5%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+  }
+}

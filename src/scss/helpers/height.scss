@@ -1,0 +1,11 @@
+$count: 0;
+
+// @for $i from 1 through $columns {
+@while $count <= 100 {
+    $count-percent: $count * 1%;
+    .h-#{$count} {
+        height: #{$count-percent};
+    }
+
+    $count: $count + 5;
+}

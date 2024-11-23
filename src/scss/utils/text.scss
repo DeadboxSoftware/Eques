@@ -1,0 +1,49 @@
+h1 {margin: 0;}
+h2 {margin: 0;}
+h3 {margin: 0;}
+h4 {margin: 0;}
+h5 {margin: 0;}
+
+// --- Colours
+.red {color: #ff1919;}
+.white {color: $white-text-color}
+
+// --- Font's
+.roboto {}
+body {font-family: "Lato", sans-serif;}
+
+// --- Responsive sizes
+
+// Default
+@media screen and (min-width: $xxs) { // 0
+    // h1 {font-size: $s-3}
+    // h2 {font-size: $s-2;}
+    // h3 {font-size: $s-1;}
+    // h4 {font-size: $xs-4;}
+    // h5 {font-size: $xs-2;}
+}
+// @media screen and (min-width: $xs) {} // 300
+@media screen and (min-width: $s) { // 480
+    // h1 {font-size: $m-1}
+    // h2 {font-size: $s-3;}
+    // h3 {font-size: $s-2}
+    // h4 {font-size: $s-1;}
+    // h5 {font-size: $xs-3;}
+}
+@media screen and (min-width: $m) { // 769
+    // h1 {font-size: $l-1}
+    // h2 {font-size: $m-1;}
+    // h3 {font-size: $s-4}
+    // h4 {font-size: $s-2;}
+    // h5 {font-size: $xs-4;}
+}
+@media screen and (min-width: $l) { // 1024
+    // h1 {font-size: $xl-1;}
+    // h2 {font-size: $m-3;}
+    // h3 {font-size: $m-1}
+    // h4 {font-size: $s-4;}
+    // h5 {font-size: $xs-4;}
+    // h4 {font-size: $small;}
+}
+
+// ---------- STATIC STYLES

@@ -1,0 +1,58 @@
+// --- SITE INFO
+$site_url: 'http://localhost:3001';
+
+// --- Colours
+//  Backgrounds
+$bk: #000;
+$bk-light-grey: #eeeeee;
+// Defaults
+$white-text-color: white;
+$heading-text-color: #222222;
+$primary-text-color: #777777;
+$secondary-text-color: #d4b254;
+// Component Colour's
+$nav-text-color: #fff;
+
+
+// --- MEDIA SIZES
+$xxl: 1440px;
+$xl: 1200px;
+$l: 1024px;
+$m: 769px; // Makes fit for ipad portrait better forcing grid to collapse here
+$s: 480px;
+$xs: 300px;
+$xxs: 0;
+
+// --- FONT SIZES (1 = Largest)
+$font-xxl-1: 52px;
+$font-xl-1: 42px;
+$font-l-1: 32px;
+$font-m-1: 24px;
+$font-s-1: 18px;
+$font-xs-1: 15px;
+$font-xxs-1: 13px;
+// --- LINE HEIGHT'S
+$lineh-xl-1: 51px;
+$lineh-xl-1: 51px;
+$lineh-l-1: 40px;
+$lineh-m-1: 32px;
+$lineh-s-1: 26px;
+$lineh-xs-1: 28px;
+$lineh-xxs-1: 20px;
+
+// --- SIZE CONSTRAINTS
+$container-max-width: 1300px;
+$container-small-width: 800px;
+$container-xsmall-width: 720px;
+
+// --- PADDING
+$default-screen-padding: 20px;
+
+// --- Z-INDEX
+$z-behind: -9999999;
+$z-background-1: -1;
+$z-middleground-1: 0;
+$z-foreground-1: 1;
+// 
+$z-10: 10;
+$z-100: 100;

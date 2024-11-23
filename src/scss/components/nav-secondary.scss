@@ -1,0 +1,316 @@
+// --- Vars
+$nav-height: 64px;
+$nav-text-color: #fff;
+$header-colour: #262626;
+$nav-colour: $header-colour;
+
+// --- Mixins
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+	@if $vendors {
+	  @each $vendor in $vendors {
+		 #{"-" + $vendor + "-" + $property}: #{$value};
+	  }
+	}
+	#{$property}: #{$value};
+}
+
+// --- Globals
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+#masthead {
+    z-index: 1000;
+}
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+header#secondaryNav.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+// --- NAV
+header#secondaryNav {
+	background: $nav-colour;
+	height: $nav-height;
+  position: relative;
+  z-index: 1000;
+}
+
+header#secondaryNav {
+  @include prefix('display', 'flex');
+}
+
+header .brand {
+	height: $nav-height;
+	overflow: hidden;
+	&.text-middle{
+	    display: table;
+	    vertical-align: middle;
+	    white-space: nowrap;
+	    a{
+		    vertical-align: middle;
+		    display: table-cell;
+	    }
+	}
+}
+
+header .brand a {
+	padding-left: 20px;
+	padding-right: 30px;
+	display: inline-block;
+	color: $nav-text-color;
+	text-decoration: none;
+	height: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	box-sizing: border-box;
+	img {
+		height: 100%;
+	}
+}
+
+header#secondaryNav nav {
+	@include prefix('display', 'flex');
+	width: 100%;
+}
+
+header#secondaryNav nav ul {
+	list-style: none;
+	@include prefix('display', 'flex');
+	padding: 0;
+	margin: 0;
+	margin-right: auto;
+	display: block;
+	width: 100%;
+}
+
+header#secondaryNav nav ul li{
+	display: inline-block;
+	position:relative;
+	&.right-align {
+		right: 0;
+    	float: right;
+	    a.nav-button {
+			width: 100%;
+			padding-right: 40px;
+	    }
+	    .nav-dropdown {
+	      width: 100%;
+	      background: $nav-colour;
+	      li{
+	      	display: block;
+	      }
+	    }
+	}
+	// --- a.nav-link
+	a.nav-link{
+		text-decoration: none;
+		color: $nav-text-color;
+	}
+	a.nav-button {
+    cursor: pointer;
+		line-height: $nav-height;
+		padding: 0 20px;
+		height: 100%;
+		box-sizing: border-box;
+		display: inline-block;
+		color: $nav-text-color;
+		text-decoration: none;
+    background: $nav-colour;
+    color: #fff;
+		&:hover {
+			background: #2581DC;
+			color: #ffffff;
+		}
+	}
+	.nav-item{
+		cursor: pointer;
+		line-height: $nav-height;
+		padding: 0 20px;
+		height: 100%;
+		box-sizing: border-box;
+		display: inline-block;
+		color: $nav-text-color;
+		text-decoration: none;
+	    background: $nav-colour;
+	    color: #fff;
+	    &--small {
+	    	padding: 0 10px;
+	    }
+	}
+}
+
+header#secondaryNav nav ul li a:not(:only-child)::after, header nav ul li a:visited:not(:only-child)::after {
+    padding-left: 4px;
+    content: ' ▾';
+}
+
+header#secondaryNav nav .nav-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+// --- Burger Menu
+
+header#secondaryNav .burgerMenu {
+	display: none;
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	right: 18px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+  z-index: $z-100;
+	&.clicked {
+		.line {
+			&:nth-child(1) { transform: rotate(45deg); top: 50%;}
+			&:nth-child(2) { display: none; }
+			&:nth-child(3) {transform: rotate(-45deg); top: 50%;}
+		}
+
+	}
+}
+
+header#secondaryNav .burgerMenu .line {
+	transition: all 0.5s;
+	width: 100%;
+	height: 1px;
+	background: white;
+	display: inline-block;
+	position: absolute;
+
+	&:nth-child(1) { top: 0;}
+	&:nth-child(2) {top: 50%;transform: translateY(-50%);}
+	&:nth-child(3) {top: 100%;}
+}
+
+// --- Avatar
+header#secondaryNav nav ul li.avatar {
+	img {
+		transform: translateY(37%) translateX(-42%);
+		line-height: $nav-height;
+		border-radius: 50%;
+    	padding: 0 10px;
+	}
+}
+
+// --- Helper styles
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+.relative {
+	position: relative;
+}
+
+.w100 {
+	width: 100%;
+}
+
+// --- Small Header
+header#secondaryNav.small {
+	$small-nav-height: 35px;
+	background: blue;
+	height: 35px;
+	.brand{
+		height: 100%;
+		width: auto;
+	}
+	nav{
+		ul{
+		    width: 100%;
+		    display: block;
+		    li{
+		    	display: inline-block;
+		    	float: left;
+	    		a{
+	    			line-height: $small-nav-height;
+	    			img{
+	    				height: 23px;
+	    			}
+	    		}
+		    	&.right-align{
+		    		position: relative;
+		    		float: right;
+		    	}
+		    }
+		}
+	}
+
+	ul.nav-dropdown{
+		display: none;
+		li{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.burgerMenu{
+	    width: 20px;
+	    height: 15px;
+	}
+}
+
+// --- Media queries
+@media (min-width: $l) {
+	header nav ul {
+		height: auto !important;
+		@include prefix('display', 'flex');
+	}
+}
+
+@media (max-width: $l) {
+	header#secondaryNav { position: relative; }
+	header#secondaryNav .burgerMenu {display: inline-block;}
+	header#secondaryNav nav {
+		width: 100%;
+		display: block;
+	}
+	header#secondaryNav nav ul.main-nav {
+		transition: all 0.25s;
+		overflow: hidden;
+		&.open {
+			display: block;
+		}
+		.nav-dropdown {
+			position: relative;
+			height: auto;
+		}
+		.nav-item, .nav-link{
+			width:100%;
+			background: $header-colour;
+		}
+		li {
+			&.right-align {
+				right: unset;
+				position: relative;
+			}
+			width: 100%;
+			ul {
+				width: 100%;
+				li {
+					a {
+						width: 100%;
+					}
+				}
+			}
+		}
+		li a {
+			width: 100%;
+		}
+	}
+}

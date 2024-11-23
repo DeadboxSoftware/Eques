@@ -1,0 +1,46 @@
+.split-block {
+  &__cell{
+    box-sizing: border-box;
+  }
+  &--img {
+    overflow-x: hidden;
+    img{
+      display: block;
+    }
+  }
+  &--content {
+    padding: 10px 30px 30px 70px;
+  }
+  // --- FLOATS
+  .float-r {float: right;}
+  .float-l {float: left;}
+  // --- MEDIA
+  @media (max-width: $l) {
+    &--content {
+      padding-left: $default-screen-padding;
+      padding-right: $default-screen-padding;
+    }
+    &--img {
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  @media (min-width: $l) {
+    &--img {
+      img{
+        height: 500px;
+        width: auto;
+      }
+    }
+  }
+  @media (min-width: $xl) {
+    &--img {
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

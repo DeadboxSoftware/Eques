@@ -1,0 +1,53 @@
+.pane { 
+
+  // --- FULLSIZE PANE MODIFIER
+  &--fullsize{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    left: 0;
+    position: relative;
+    top: 0;
+    transition: background-color 300ms ease;
+    width: 100%;
+  }
+  // --- CONTENT POSITIONING
+  .center-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  // --- CONTENT
+  .headline {
+    text-transform: uppercase;
+    color: $secondary-text-color;
+    font-size: $font-xxs-1;
+    line-height: $lineh-xxs-1;
+  }
+  h1 {
+    color: $heading-text-color;
+    line-height: $lineh-xl-1;
+    font-size: $font-xl-1;
+  }
+  h2 {
+    color: $heading-text-color;
+    line-height: $lineh-l-1;
+    font-size: $font-l-1;
+  }
+  p {
+    line-height: $lineh-xxs-1;
+    font-size: $font-xxs-1;
+  }
+  // --- BACKRGOUNDS
+  &--light-grey{
+    background: $bk-light-grey;
+  }
+  // --- TEXT COLOURS
+  &.white {
+    color: $white-text-color;
+    .headline, h1 {
+      color: $white-text-color;
+    }
+  }
+}

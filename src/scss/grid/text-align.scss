@@ -1,0 +1,10 @@
+$sizes: (xxs, $xxs), (xsm, $xs), (sm, $s), (md, $m), (lg, $l);
+
+// Loop through the gutters and set the gutters + margins
+@each $label, $size in $sizes {
+    @media screen and (min-width: #{$size}) {
+        .text-#{$label}-center {text-align: center;}
+        .text-#{$label}-right {text-align: right;}
+        .text-#{$label}-left {text-align: left;}
+    }
+}

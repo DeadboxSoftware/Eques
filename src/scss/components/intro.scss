@@ -1,0 +1,54 @@
+.intro {
+  .overlay {
+    background: #060606;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: $z-foreground-1;
+    opacity: 0.5;
+    left: 0;
+  }
+  &__img-slider {
+    height: 100%;
+  }
+  &__slide {
+    position: absolute;
+    top: 0;
+    background-size: cover;
+    padding: $default-screen-padding;
+    box-sizing: border-box;
+    @media (max-width: $xxl) {
+      background-position-x: 60%;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: $m) {
+      background-position-x: 45%;
+    }
+  }
+  h1 {
+    font-size: $font-xxl-1;
+  }
+  .tab {
+    &-container {
+      z-index: $z-10;
+      position: absolute;
+      bottom: 22%;
+      width: 100%;
+      @include prefix('display', 'flex');
+      justify-content: center;
+    }
+    
+    &-btn {
+      $m: 5px;
+      width: 50px;
+      height: 5px;
+      background: white;
+      margin-left: $m;
+      margin-right: $m;
+      cursor: pointer;
+      &.active {
+        background: $secondary-text-color;
+      }
+    }
+  }
+}

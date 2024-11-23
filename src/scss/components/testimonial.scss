@@ -1,0 +1,27 @@
+.testimonial {
+  position: relative;
+  &__block {
+    padding-top: 124px;
+    padding-bottom: 110px;
+  }
+  .container {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+  .arrow {
+    width: 36px;
+    height: 70px;
+    background-image: url('#{$site_url}/assets/arrow_svg.svg');
+    position: absolute;
+    transform: translateY(-50%);
+    cursor: pointer;
+    top: 50%;
+    &__left {
+      left: 4%;
+    }
+    &__right {
+      right: 4%;
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+}

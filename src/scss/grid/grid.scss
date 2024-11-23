@@ -1,0 +1,172 @@
+// ---// CUSTOM SCSS GRID SYSTEM \\---
+// --- https://github.com/cavanbecksmith/Custom-Grid-System-SCSS
+
+.col {
+    float: left;
+    width: 100%;
+}
+
+.col-table {
+    display: table-cell;
+
+}
+
+.row-table {
+    display: table-row;
+    width: 100%;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.table-fixed {
+    table-layout: fixed;
+}
+
+/*Added*/.clearfix {
+    clear: both;
+}
+.clearfix:after {
+  clear: both; 
+  content: "";
+  display: table; 
+}
+
+.row {
+    content: '';
+    height: auto;
+}
+
+$sizes: (xxs, $xxs), (xs, $xs), (sm, $s), (md, $m), (lg, $l); 
+
+@each $label, $size in $sizes {
+    @media only screen and (min-width: $size) {
+        .col-#{$label}-1 {
+            width: 8.33333%; 
+            }
+             
+        .col-#{$label}-2 {
+            width: 16.66667%; 
+            }
+             
+        .col-#{$label}-3 {
+            width: 25%; 
+            }
+             
+        .col-#{$label}-4 {
+            width: 33.33333%; 
+            }
+             
+        .col-#{$label}-5 {
+            width: 41.66667%; 
+            }
+             
+        .col-#{$label}-6 {
+            width: 50%; 
+            }
+             
+        .col-#{$label}-7 {
+            width: 58.33333%; 
+            }
+             
+        .col-#{$label}-8 {
+            width: 66.66667%; 
+            }
+             
+        .col-#{$label}-9 {
+            width: 75%; 
+            }
+             
+        .col-#{$label}-10 {
+            width: 83.33333%; 
+            }
+             
+        .col-#{$label}-11 {
+            width: 91.66667%; 
+            }
+             
+        .col-#{$label}-12 {
+            width: 100%; 
+            }
+            
+        .hide-#{$label} {
+            display: none;
+        }
+        
+        // Default
+        .show-#{$label} {
+            display: block;
+        }
+
+        .show-#{$label}-inline-block {
+            display: inline-block;
+        }
+
+        
+    }
+}
+
+// --- SHOW AND HIDE
+@include respond-to('any') { .hide-any { display:none;} .show-any { display:block;} }
+@include respond-to('handhelds') { .hide-handhelds { display:none;} .show-handhelds { display:block;} }
+@include respond-to('medium-screens') { .hide-medium { display:none;} .show-medium { display:block;} }
+@include respond-to('wide-screens') { .hide-wide { display:none;} .show-wide { display:block;} }
+
+// --- GUTTERS & MARGINS (try changing this)
+
+$grid-gutter-width-xs: 6px;
+$grid-gutter-width-sm: 18px;
+$grid-gutter-width-md: 30px;
+$grid-gutter-width-lg: 42px;
+
+/*
+* Where the custom grid begins
+*/
+
+// Define all the possible gutters with their sizes
+$gutters: (xs, $grid-gutter-width-xs), (sm, $grid-gutter-width-sm), (md, $grid-gutter-width-md), (lg, $grid-gutter-width-lg);
+
+// Loop through the gutters and set the gutters + margins
+@each $label, $size in $gutters {
+  .gutter-xs-#{$label} { padding-left: (math.div($size, 2)); padding-right: (math.div($size, 2)); }
+  .gutter-tb-xs-#{$label}-up { padding-top: (math.div($size, 2)); padding-bottom: (math.div($size, 2)); }
+  .gutter-margin-xs-#{$label} { margin-left: (math.div($size, 2)); margin-right: (math.div($size, 2)); }
+  .gutter-margin-xs-#{$label}-up { margin-top: $size; }
+  .gutter-none-xs-#{$label} {margin: 0; padding: 0;}
+  .gutter-margin-tb-xs-#{$label} {margin-top: $size; margin-bottom: $size;}
+}
+
+@media (min-width: $s) {
+  @each $label, $size in $gutters {
+    .gutter-sm-#{$label} { padding-left: (math.div($size, 2)); padding-right: (math.div($size, 2)); }
+    .gutter-tb-sm-#{$label}-up { padding-top: (math.div($size, 2)); padding-bottom: (math.div($size, 2)); }
+    .gutter-margin-sm-#{$label}-up { margin-top: $size; }
+    .gutter-margin-sm-#{$label} { margin-left: -(math.div($size, 2)); margin-right: -(math.div($size, 2)); }
+    .gutter-margin-tb-sm-#{$label} {margin-top: $size; margin-bottom: $size;}
+    .gutter-none-sm-#{$label} {margin: 0; padding: 0;} 
+  }
+}
+
+@media (min-width: $m) {
+  @each $label, $size in $gutters {
+    .gutter-md-#{$label} { padding-left: (math.div($size, 2)); padding-right: (math.div($size, 2)); }
+    .gutter-tb-md-#{$label}-up { padding-top: (math.div($size, 2)); padding-bottom: (math.div($size, 2)); }
+    .gutter-margin-md-#{$label}-up { margin-top: $size; }
+    .gutter-margin-md-#{$label} { margin-left: -(math.div($size, 2)); margin-right: -(math.div($size, 2)); }
+    .gutter-margin-tb-md-#{$label} {margin-top: $size; margin-bottom: $size;}
+    .gutter-none-md-#{$label} {margin: 0; padding: 0;}
+  }
+}
+
+@media (min-width: $l) { 
+  @each $label, $size in $gutters {
+    .gutter-lg-#{$label} { padding-left: (math.div($size, 2)); padding-right: (math.div($size, 2)); }
+    .gutter-tb-lg-#{$label}-up { padding-top: (math.div($size, 2)); padding-bottom: (math.div($size, 2)); }
+    .gutter-margin-lg-#{$label} { margin-left: -(math.div($size, 2)); margin-right: -(math.div($size, 2)); }
+    .gutter-margin-lg-#{$label}-up { margin-top: $size; }
+    .gutter-margin-tb-lg-#{$label} {margin-top: $size; margin-bottom: $size;}
+    .gutter-none-lg-#{$label} {margin: 0; padding: 0;}
+  }
+}

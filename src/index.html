@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/deadbox.css" rel="stylesheet"></head>
+</head>
+<body class="h-100 body-full-size">
+
+<header id="secondaryNav" class="header-sticky">
+  <nav class="container fullW" style="position: relative;">
+    <div class="brand text-middle">
+      <a href="">Deadbox</a>
+    </div>
+    <ul class="mr-auto main-nav" style="max-height: 0;">
+      <li class="right-align avatar">
+        <div style="height: 100%;" class="nav-item nav-item--small"><a class="btn btn--white-border">Download</a></div>
+      </li>
+      <li><div class="nav-item nav-item--small"><a href="./index.html" class="nav-link">Home</a></div></li>
+      <li><div class="nav-item nav-item--small"><a href="./altpage.html" class="nav-link">Alt Page</a></div></li>
+      <li><div class="nav-item nav-item--small"><a href="https://github.com/DeadboxSoftware" class="nav-link">Github</a></div></li>
+    </ul>
+  </nav>
+  <div class="burgerMenu" id="nav-toggle">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+</header>
+
+
+<div class="page-container">
+  <section class="pane pane--light-grey testimonial" style="">
+    <div class="container container--default-padding-dbl-lr text-xxs-left testimonial__container">
+      <div class="testimonial__block">
+        <div class="headline">Headline</div>
+        <h2 class="m-xxs-b-40">Heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+      </div>
+    </div>
+  </section>
+</div> 
+
+
+<footer class="footer m-t-auto">
+  <div class="container">
+    <div class="footer__logo">
+      <div class="slither slither-left"></div>
+      <a href="/"><img src="./assets/logo.png" width="75" /></a>
+      <div class="slither slither-right"></div>
+    </div>
+    <div class="container--default-padding-dbl-lr">
+      <div class="footer__links row clearfix">
+        <div class="col col-md-2 col-sm-6 text-xxs-center text-md-left">
+          <div class="footer__link-headers">About</div>
+          <ul>
+            <li>Blog</li>
+            <li>Github</li>
+          </ul>
+        </div>
+        <div class="col col-md-3 col-sm-6 text-xxs-center text-md-left">
+          <div class="footer__link-headers">Dev Stuff</div>
+          <ul>
+            <li>Website Development</li>
+            <li>User Experience & Design</li>
+            <li>Hosting & Maintainence</li>
+            <li>eCommerce Development</li>
+          </ul>
+        </div>
+        <div class="col col-md-3 col-sm-6 text-xxs-center text-md-left">
+          <div class="footer__link-headers">Other</div>
+          <ul>
+            <li>Misc</li>
+            <li>Link</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="/js/jquery.js"></script>
+<script src="/js/polyfills.js"></script><script src="/js/deadbox.js"></script></body>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', ()=>{
+  deadbox.nav()
+  // new deadbox.StickyNav('#secondaryNav', '.page-container');
+  deadbox.set_full_size(document.querySelector('.pane'), 70)
+})
+
+</script>
+</body>
+</html>
